@@ -2,25 +2,22 @@
 #include <stdlib.h>
 
 /**
- * pop_listint - deletes the head node of a listint_t linked list
- * @head: double pointer to the head of the list
- * Return: the head node's data (i). Else 0 if list is empty
- *
+ * pop_listint - locates a node of a listint_t linked list
+ * @index: index of node to locate
+ * @head: pointer to the first node
+ * Return:pointer to the node
  */
-
-int pop_listint(listint_t **head)
+listint_t *get_nodeint_at_index(listint_t *head, unsigned int index)
 {
-	listint_t *first;
-	int i;
+	unsigned int to_find;
 
-	if (*head == NULL)
-		return (0);
-
-	first = *head;
-	i = (*head)->n;
-	*head = (*head)->next;
-
-	free(first);
-
-	return (i);
+	if (head == NULL)
+		return (NULL);
+	for (to_find = 0; to_find < index; to_find++)
+	{
+		head = head->next;
+		if (head == NULL)
+			return (NULL);
+	}
+	return (head);
 }
