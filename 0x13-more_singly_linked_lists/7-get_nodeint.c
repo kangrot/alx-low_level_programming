@@ -2,7 +2,7 @@
 #include <stdlib.h>
 
 /**
- * pop_listint - locates a node of a listint_t linked list
+ * get_nodeint_at_index - locates a node of a listint_t linked list
  * @index: index of node to locate
  * @head: pointer to the first node
  * Return:pointer to the node
